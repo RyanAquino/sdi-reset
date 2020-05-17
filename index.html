@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>GIS Account Manager </title>
+
+	<!-- Bootstrap / FA CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/2bca98d621.js" crossorigin="anonymous"></script>
+
+	<script>
+	    var test = document.createElement("div")
+	    test.className = "hidden d-none"
+
+	    document.head.appendChild(test)
+	    var cssLoaded = window.getComputedStyle(test).display === "none"
+	    document.head.removeChild(test)
+
+	    if (!cssLoaded) {
+	        var link = document.createElement("link");
+
+	        link.type = "text/css";
+	        link.rel = "stylesheet";
+	        link.href = "Bootstrapv4/css/bootstrap.min.css";
+
+	        document.head.appendChild(link);
+	    }
+	  </script>
+	
+	<!-- Custom -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div id="dimmer">
+		<img src="load.gif" class="center-block" id="loading">
+	</div>
+
+	<div class="container h-100">
+		
+		<div class="row h-100 align-items-center justify-content-center">
+		<div class="col-lg-6">
+			<div class="alert alert-success text-center" role="alert" hidden>
+  				A simple success alert—check it out!
+			</div>
+			<div class="alert alert-danger text-center" role="alert" hidden>
+			  	A simple danger alert—check it out!
+			</div>
+			<div class="card">
+			<img src="GIS_logo_colour.png" alt="Trend Micro Logo" class="card-img-top">
+
+				<div class="card-body">
+					<h1 class="text-center">Account Manager</h1>
+					<p class="text-center">TrendSDI Password Reset</p>
+					<form method="POST" onsubmit="sendRequest(event)">
+					  <div class="form-group">
+					    <label for="exampleInputEmail1">Domain</label>
+					    <input type="text" name="domain" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="TRENDSDI" readonly>
+
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputPassword1">Account Name</label>
+					    <input type="text" name="acct" class="form-control" id="exampleInputPassword1" value="" required>
+					  </div>
+
+					  <div class="form-group">
+					    <label for="exampleInputPassword1">Old Password</label>
+					    <input type="password" name="old" class="form-control" value="" required>
+					  </div>
+
+					  <div class="form-group">
+					    <label for="exampleInputPassword1">New Password</label>
+					  	<div class="input-group">
+						    <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 10 or more characters" name="new" class="form-control border-right-0" value="" required>
+						    <span class="input-group-append">
+					            <button class="btn border show-password" type="button">
+					            	<i class="fas fa-eye"></i>
+					            </button>
+					        </span>
+							<small id="emailHelp" class="form-text text-muted">Password must contain at least 10 characters including upper/lowercase, number and special character</small>
+						</div>
+					  </div>
+
+					  <div class="form-group">
+					    <label for="exampleInputPassword1">Confirm New Password</label>
+					    <input type="password" name="new2" class="form-control" value="" required>
+					  </div>
+					  <button type="submit" class="btn btn-success btn-block" value="<%=L_OK_Text%>">Reset Password</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- Bootstrap CDN -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="Bootstrapv4/js/bootstrap.min.js"><\/script>')}</script>
+
+	<!-- custom -->
+	<script src="script.js" type="text/javascript"></script>
+</body>
+</html>
