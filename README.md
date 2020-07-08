@@ -7,3 +7,6 @@ Revamped the existing AD Password reset frontend portal from vanilla HTML,CSS in
 * CSS
 * JavaScript
 * VBScript
+
+## Form view
+![alt text](./form.PNG)
